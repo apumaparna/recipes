@@ -17,7 +17,7 @@ class Recipe {
     ),
     Recipe(
       'Tomato Soup',
-      'roastedtomatosoup.jpg',
+      'assets/roastedtomatosoup.jpg',
     ),
     Recipe(
       'Grilled Cheese',
