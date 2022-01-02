@@ -1,6 +1,4 @@
-// import 'dart:html';
 import 'recipe.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -47,9 +45,19 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView.builder(
         itemCount: Recipe.samples.length,
         itemBuilder: (BuildContext context, int index) {
-          return Text(Recipe.samples[index].label);
+          return buildRecipeCard(Recipe.samples[index]);
         },
       )),
+    );
+  }
+
+  // Add buildRecipeCard() here
+  Widget buildRecipeCard(Recipe recipe) {
+    return Card(
+      child: Column(children: <Widget>[
+        Image(image: AssetImage(recipe.imageUrl)),
+        Text(recipe.label),
+      ]),
     );
   }
 }

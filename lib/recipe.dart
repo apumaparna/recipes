@@ -17,7 +17,7 @@ class Recipe {
     ),
     Recipe(
       'Tomato Soup',
-      'assets/27729023535_a57606c1be.jpg',
+      'roastedtomatosoup.jpg',
     ),
     Recipe(
       'Grilled Cheese',
