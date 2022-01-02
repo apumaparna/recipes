@@ -17,8 +17,11 @@ class RecipeApp extends StatelessWidget {
     return MaterialApp(
       title: 'Recipe Calculator',
       theme: theme.copyWith(
-          colorScheme: theme.colorScheme
-              .copyWith(primary: Colors.black45, secondary: Colors.deepPurple)),
+          colorScheme: theme.colorScheme.copyWith(
+        primary: Colors.deepPurple,
+        secondary: Colors.limeAccent,
+        //tertiary: Colors.deepPurple,
+      )),
       home: const MyHomePage(title: 'Recipe Calculator'),
     );
   }
@@ -42,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           widget.title,
           style: const TextStyle(
             backgroundColor: Colors.white30,
+            color: Colors.limeAccent,
             fontFamily: 'Courier New',
             fontWeight: FontWeight.w900,
             letterSpacing: 2.0,
@@ -76,9 +80,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Card(
         // elevation adds shadow
         elevation: 2.0,
-        color: Colors.black12,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        color: Colors.black26,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          side: BorderSide(color: Colors.lime, width: 7.0),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(children: <Widget>[
@@ -90,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               recipe.label,
               style: const TextStyle(
                   backgroundColor: Colors.black38,
-                  color: Colors.white,
+                  color: Colors.limeAccent,
                   fontSize: 20.0,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Courier New'),
