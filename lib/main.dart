@@ -16,10 +16,8 @@ class RecipeApp extends StatelessWidget {
     return MaterialApp(
       title: 'Recipe Calculator',
       theme: theme.copyWith(
-          colorScheme: theme.colorScheme.copyWith(
-        primary: Colors.grey,
-        secondary: Colors.black,
-      )),
+          colorScheme: theme.colorScheme
+              .copyWith(primary: Colors.black45, secondary: Colors.deepPurple)),
       home: const MyHomePage(title: 'Recipe Calculator'),
     );
   }
@@ -38,7 +36,21 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      //backgroundColor: Colors.grey,
+      appBar: AppBar(
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            backgroundColor: Colors.white30,
+            fontFamily: 'Courier New',
+            fontWeight: FontWeight.w900,
+            letterSpacing: 2.0,
+            fontSize: 25.0,
+          ),
+        ),
+        toolbarHeight: 70.0,
+        elevation: 10.0,
+      ),
       body: SafeArea(
           // Having a SafeArea prevents the app contents from
           // encroaching on operating system interfaces
@@ -56,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Card(
         // elevation adds shadow
         elevation: 2.0,
+        color: Colors.black12,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         child: Padding(
@@ -68,9 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               recipe.label,
               style: const TextStyle(
+                  backgroundColor: Colors.black38,
+                  color: Colors.white,
                   fontSize: 20.0,
                   fontWeight: FontWeight.w700,
-                  fontFamily: 'Palatino'),
+                  fontFamily: 'Courier New'),
             ),
           ]),
         ));
