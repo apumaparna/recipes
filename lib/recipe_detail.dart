@@ -54,7 +54,19 @@ class _RecipeDetailState extends State<RecipeDetail> {
                   fontFamily: 'Courier New',
                   backgroundColor: Colors.black12,
                   fontWeight: FontWeight.w700)),
-          // TODO: Add Expanded
+
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(7.0),
+              itemCount: widget.recipe.ingredients.length,
+              itemBuilder: (BuildContext context, int index) {
+                final ingredient = widget.recipe.ingredients[index];
+                // TODO: Add ingredient.quantity
+                return Text(
+                    '${ingredient.quantity} ${ingredient.measure} ${ingredient.name}');
+              },
+            ),
+          ),
 
           // TODO: Add Slider() here
         ],
